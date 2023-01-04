@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <nav class="navbar navbar-dark bg-primary mt-3"> Mon Calendrier</nav>
+    <div class="container">
+        <table class="table table-bordered col-md-8 mx-auto">
+
+            <tr>
+                <th>Nom Matière</th>
+                <th>Date début</th>
+                <th>Date de fin</th>
+            </tr>
+            {% for newProgramme in formation %}
+                <tr>
+                    <td>{{ newProgramme.subject.name |date('Y-m-d') }}</td>
+
+                    <td>{{ newProgramme.planningsubject.startdate |date('Y-m-d') }}</td>
+                    <td>{{ newProgramme.planningsubject.enddate |date('Y-m-d') }}</td>
+
+
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+{% endblock %}

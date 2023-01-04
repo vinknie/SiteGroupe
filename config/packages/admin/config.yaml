@@ -1,0 +1,9 @@
+
+# easy_admin:
+#     site_name: '<em style="font-size: 80%">Paramétrage</em> <span style="font-size: 20%"><a href="http://localhost:8000" style="font-size: 50%" class="text-primary">Quitter</a></span>'
+#     design:
+#       assets:
+#         css: ['css/custom_backend.css']
+
+
+

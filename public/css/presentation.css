@@ -1,0 +1,22 @@
+.titlepresentation{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 60px;
+    color:rgb(87, 87, 87);
+    text-transform: none;
+    font-style: italic;
+}
+.textpresentation{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom:0;
+    padding-bottom: 15px;
+}
+.littletitle{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 40px;
+    color:rgb(87, 87, 87);
+    text-transform: none;
+    font-style: italic;
+}

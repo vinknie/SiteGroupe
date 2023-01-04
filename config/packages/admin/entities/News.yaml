@@ -1,0 +1,17 @@
+easy_admin:
+  entities:
+    News:
+      class: App\Entity\News
+      form: 
+      #   fields: 
+      #     - {property: 'title', label: 'Titre'}
+      #     - {property: 'description'}
+      #     - {property: 'image'}
+      #     - {property: 'date'}
+
+      # list:
+      #   fields:
+      #     - {property: 'title', label: 'titre'}
+      #     - {property: 'description'}
+      #     - {property: 'image'}
+      #     - {property: 'date'}

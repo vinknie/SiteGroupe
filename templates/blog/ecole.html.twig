@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container-fluid">
+    <h3 class="titlenew">Présentation</h3>
+    <div class="row pt-3">
+        <div class="col-6 text-center">
+            <p class="text-center">Le passage au collège est une étape importante dans la scolarité de votre enfant.</p>
+            <a href="{{ path('presentation') }}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Pour plus d'information cliquez ici</a></button>
+        </div>
+        <div class="col-6 text-center">
+            <img class="" src="https://picsum.photos/300/200">
+        </div>
+    </div><hr>
+    <h3 class="titlenew">Réglement Interieur</h3>
+    <div class="row pt-3">
+        <div class="col-6 text-center ">
+            <img class="" src="https://picsum.photos/300/200">
+        </div>
+        <div class="col-6 text-center">
+            <p class="text-center"> A partir de 2020, le réglement interieur ne sera plus inscrit dans les carnets des élèves . Il sera en libre accès et a télécharger en cliquant sur le lien de dessous. Merci de bien le lire. </p>
+            <a href="{{ path('reglement') }}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Pour plus d'information cliquez ici</a></button>
+        </div>
+    </div><hr>
+    <h3 class="titlenew">La Cantine</h3>
+    <div class="row pt-3 pb-3">
+        <div class="col-6 text-center ">
+            <p class="text-center">Notre chef et son équipe accueillent les élèves chaque jour de la semaine.</p>
+            <a href="{{ path('cantine') }}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Pour plus d'information cliquez ici</a>
+        </div>
+        <div class="col-6 text-center">
+            <img class="" src="https://picsum.photos/300/200">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

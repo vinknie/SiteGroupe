@@ -1,0 +1,69 @@
+{% extends 'backoffice/base.html.twig' %}
+{% block page_title %} Gestion des classes {% endblock %}
+{% block fil_ariane %} 
+<li class="breadcrumb-item active">Liste des classes</li>
+{% endblock %}
+{% block body %}
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('primary') %}
+            <div class="alert alert-primary">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('danger') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
+     
+    <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">List des classes</h3>
+                <div class="card-tools"><a href="{{ path('classe_add') }}" class="btn btn-block btn-outline-success btn-sm">Ajouter classe</a></div>                  
+                
+                
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>                  
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Nom de la classe</th>
+                      <th>Niveau</th>
+                      <th>Numéro</th>                 
+                      <th colspan="2" style="text-align:center">Action</th>                    
+                    </tr>
+                  </thead>
+                   <tbody>
+                        {% for classe in classes %}
+                        
+                          <tr>
+                            <th scope="row">{{ classe.id }}</th>
+                            <td>{{ classe.nameclass }}</td>
+                            <td>{{ classe.level }}</td>
+                            <td>{{ classe.number }}</td>
+                            <td><a href="{{ path('classe_edit', {'id' : classe.id }) }}"
+                              class='text-primary'> <i class="fas fa-edit"></i></a></td>                            
+                            <td><a href="{{ path('classe_remove', {'id' : classe.id }) }}"  class='text-primary'>
+                            <i class="fas fa-trash-alt" style='color:red'
+                             onclick="return confirm('Voulez-vous vraiment supprimer cette classe ?') || event.preventDefault()"></i></a></td>
+                          </tr>
+                          
+                          {% endfor %}
+                        </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+       
+                       
+              
+{% endblock %}

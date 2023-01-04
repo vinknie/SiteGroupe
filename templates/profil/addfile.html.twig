@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1 class="display-4 text-center">Ajouter un cours </h1>
+
+    {{ form_start(file,{ 'attr' : {'class': "col-md-7 mx-auto"}}) }}
+    {{ form_row(file.userId) }}
+    {{ form_row(file.subject) }}
+    {{ form_row(file.description, { 'attr' : {'placeholder': "Description du cours",}}) }}
+    {{ form_row(file.files, { 'attr' : {'placeholder': "le fichier"}}) }}
+
+
+    <button type="submit" class="btn btn-primary"> Enregistrer</button>
+    {{ form_end(file) }}
+    <br><br><br>
+{% endblock %}

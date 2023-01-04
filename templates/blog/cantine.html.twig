@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container-fluid">
+    <h3 class="titlenew">La Cantine</h3>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <p>Notre chef et son équipe accueillent les élèves chaque jour de la semaine.</p>
+            <p>Menus : Consultez les menus de la semaine ici:</p>
+            <p><b>Prix du repas</b> : 6,95 euros.</p>
+            <p>Attention: Si votre enfant souffre d'une allergie alimentaire, vous devez impérativement le signaler à l'infirmerie, qui transmettra au service de restauration</p>
+        </div>
+    </div>
+    <table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Lundi</th>
+            <th scope="col">Mardi</th>
+            <th scope="col">Mercredi</th>
+            <th scope="col">Jeudi</th>
+            <th scope="col">Vendredi</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Entree</th>
+                <td scope="col">{{ lundi.entree }}</td>
+                <td scope="col"> {{ mardi.entree }}</td>
+                <td scope="col">{{ mercredi.entree }}</td>
+                <td scope="col">{{ jeudi.entree }}</td>
+                <td scope="col">{{ vendredi.entree }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Plat</th>
+                <td scope="col">{{ lundi.mainCourse }}</td>
+                <td scope="col">{{ mardi.mainCourse }}</td>
+                <td scope="col">{{ mercredi.mainCourse }}</td>
+                <td scope="col">{{ jeudi.mainCourse }}</td>
+                <td scope="col">{{ vendredi.mainCourse }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Dessert</th>
+                <td scope="col">{{ lundi.dessert }}</td>
+                <td scope="col">{{ mardi.dessert }}</td>
+                <td scope="col">{{ mercredi.dessert }}</td>
+                <td scope="col">{{ jeudi.dessert }}</td>
+                <td scope="col">{{ vendredi.dessert }}</td>
+        </tr>
+    </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}    

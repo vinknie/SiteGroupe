@@ -1,0 +1,100 @@
+ /* ZONE RESPONSIVE ACCEUIL */
+ @media(max-width: 1000px) {
+    /* MENU RESPONSIVE */
+    nav{
+        position: initial;
+        z-index: 1000;
+    }
+    .nameSite {
+        position: fixed;
+        top: 0;
+        margin-top: 16px;
+    }
+
+    nav ul {
+        max-height: 0px;
+        background: #000;
+    }
+
+    nav.black ul {
+        background: #000;
+    }
+
+    .showing {
+        max-height: 34em;
+    }
+
+    nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    
+    /* Video Responsive */
+
+    .videoresponsive{
+        width:400px; 
+        height:200px; 
+    }
+    
+        /* style H3 */
+        h3{
+            text-align: center;
+            padding-top: 20px;
+            font-size: 30px;
+            color:rgb(87, 87, 87);
+            text-transform: none;
+            font-style: italic;
+        }
+
+    /* Article Responsive */
+
+    #contentArticle
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .scene{
+        width: 70%;
+    }
+    .card__face--front p{
+        font-size: 15px;
+    }
+
+
+
+    /* FOOTER  */
+    .footer-global{
+        flex-direction: column;
+        margin-bottom: 0px;
+        justify-content: center;
+    }
+    .footer-global .footer-left,
+    .footer-global .footer-center,
+    .footer-global .footer-right{
+    width: 100%;
+    padding-bottom: 20px;
+    
+    }
+
+    
+    /* ############################################################# */
+    /* RESPONSIVE footer */
+    .footer-global .footer-center {
+    padding-left: 25px;
+    }
+
+
+    .footer-global .footer-right {
+        width: 30%;
+        float :none; 
+        
+    }
+}

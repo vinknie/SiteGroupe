@@ -1,0 +1,16 @@
+easy_admin:
+  entities:
+    Subject:
+      class: App\Entity\Subject
+      form: 
+        fields: 
+          - {property: 'name'}
+          - {property: 'examId'}
+          - {property: 'lessons'}
+
+
+      list:
+        fields:
+          - {property: 'name', label: 'Nom'}
+          - {property: 'coefficient'}
+          - {property: 'lessons'}

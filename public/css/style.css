@@ -1,0 +1,357 @@
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+
+    body {
+        font-family: "Helvetica Neue",sans-serif;
+        font-weight: lighter;
+        
+    }
+        /* LE STYLE DU HEADER */
+    header {
+        width: 100%;
+        height:30vh;
+        background: url('../img/header.jpg') no-repeat 50% 50%;
+        background-size: cover;
+    }
+
+    .content {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: justify;
+        background-color:  rgba(128, 128, 128, 0.20);
+        padding-bottom: 15px;
+    }
+
+    
+        /* LE STYLE DE LA NAVBAR */
+    .nameSite {
+        line-height: 60px;
+        position: fixed;
+        float: left;
+        margin: 16px 46px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        line-height: 60px;
+        z-index: 1000;
+    }
+
+    nav ul {
+        line-height: 60px;
+        list-style: none;
+        background: rgba(0, 0, 0, 0);
+        overflow: hidden;
+        color: #fff;
+        padding: 0;
+        text-align: right;
+        margin: 0;
+        padding-right: 40px;
+        transition: 1s;
+    }
+
+    nav.black ul {
+        background: #000;
+    }
+
+    nav ul li {
+        display: inline-block;
+        padding: 16px 40px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .menu-icon {
+        line-height: 60px;
+        width: 100%;
+        background: #000;
+        text-align: right;
+        box-sizing: border-box;
+        padding: 15px 24px;
+        color: #fff;
+        display: none;
+    }
+
+
+
+    #scrolling-menu li {
+    /* mettre le menu en horizontal */
+        display: inline-block;
+    }
+    #scrolling-menu ul li {
+    /* Enleve l'effet Horizontal  */
+        display: inherit;
+    }
+
+    #scrolling-menu ul {
+        /* Deplace le sous menu en dehors de l'ecran  */
+        position: absolute;
+        left: -999em;
+        text-align: left;
+        z-index: 1000;
+    }
+    #scrolling-menu li:hover ul {
+    /* Faire revenir les menus au hover*/
+        left: auto;
+        background-color: black;
+    }
+    #scrolling-menu li:hover{
+    /* Changer la color au hover */
+        background-color: black;
+    }
+    nav ul li a:hover{
+
+    color: white;
+    text-decoration:none;
+    
+    }
+    /* style titre */
+    .titlenew ,.titleconfi, .titlehobbie {
+        text-align: center;
+        padding-top: 30px;
+        font-size: 60px;
+        color:rgb(87, 87, 87);
+        text-transform: none;
+        font-style: italic;
+    }
+    
+
+    /* STYLE VIDEO */
+
+    .video{
+        
+        text-align:center;
+    }
+
+
+    /* STYLE DES ARTICLES  */
+
+    #contentArticle{
+        width: 100%;
+        justify-content: space-around;
+        display: flex;
+        z-index: 500;
+    }
+
+    .scene {
+        width: 30%;
+        height: 350px;
+        margin: 40px 0;
+        perspective: 600px;
+        
+    }
+    
+    .card,.card1,.card2 {
+    
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transform-origin: center right;
+        transition: transform 1s;
+    }
+
+    .card.is-flipped,.card1.is-flipped,.card2.is-flipped {
+        transform: translateX(-100%) rotateY(-180deg);
+    }
+
+    .card__face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: white;
+        text-align: center;
+        backface-visibility: hidden;
+    }
+    
+    .card__face--front {
+        background: grey;
+        
+    }
+    
+    .card__face--back {
+        background: grey;
+        transform: rotateY(180deg);
+    }
+    .card__face--front p{
+        font-size: 20px;
+    }
+    .imgback{
+        width: 250px;
+        height: 200px;
+    }
+
+    /* LE STYLE DU FOOTER*/
+    .footer-global{
+        background: #666;
+        width: 100%;
+        padding: 15px 50px;
+    }
+    
+    .footer-global .footer-left,
+    .footer-global .footer-center,
+    .footer-global .footer-right{
+        display: inline-block;
+        vertical-align: top;
+    }
+    /** retour en haut **/
+    .comeback{
+        text-align: end;
+        margin-right:65px;
+    }
+    .linkcomeback{
+        font-size: 14px;
+        color:  #ffffff;
+    }
+    .linkcomeback:hover{
+        color:  #ffffff;
+    }
+    
+    /* Footer left */
+    
+    .footer-global .footer-left{
+        width: 30%;
+    }
+    
+    .footer-global .footer-copyright{
+        color:  #ffffff;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    /* Footer Center */
+    
+    .footer-global .footer-center{
+        width: 30%;
+        
+    }
+    
+    .footer-global .footer-center i{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+    
+    .footer-global .footer-center i.fa-envelope{
+        font-size: 17px;
+        line-height: 38px;
+    }
+    
+    .footer-global .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+        font-weight:400;
+        vertical-align: middle;
+        margin:0;
+    }
+    
+    .footer-global .footer-center p span{
+        display:block;
+        font-size:14px;
+        line-height:2;
+    }
+    
+    .footer-global .footer-center p .emaillien{
+        color:  #ffffff;
+        text-decoration: none;
+        font-size:16px;;
+    }   
+    /* Partie Droite du Footer */
+    
+    .footer-global .footer-right{
+        width: 30%;
+        float: right;
+    }
+    
+    .footer-global .footer-right p{
+        display: inline-block;
+        vertical-align: top;
+        margin: 15px 42px 0 0;
+        color: #ffffff;
+    }
+
+/* Formulaire de contact */
+
+    .footer-global form{
+        display: inline-block;
+    }
+
+    .footer-global form input,
+    .footer-global form textarea{
+        display: block;
+        border-radius: 3px;
+        box-sizing: border-box;
+        background-color:  #1f2022;
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+        border: none;
+        resize: none;
+
+        font: inherit;
+        font-size: 14px;
+        font-weight: normal;
+        color:  #d1d2d2;
+
+        width: 400px;
+        padding: 18px;
+    }
+
+    .footer-global ::-webkit-input-placeholder {
+        color:  #5c666b;
+    }
+
+    .footer-global ::-moz-placeholder {
+        color:  #5c666b;
+        opacity: 1;
+    }
+
+    .footer-global :-ms-input-placeholder{
+        color:  #5c666b;
+    }
+
+
+    .footer-global form input{
+        height: 55px;
+        margin-bottom: 15px;
+    }
+
+    .footer-global form textarea{
+        height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .footer-global form .button{
+        border-radius: 3px;
+        background-color:  #33383b;
+        color: #ffffff;
+        border: 0;
+        padding: 15px 50px;
+        font-weight: bold;
+        float: right;
+        width: 50%;
+    }
+    .redirection{
+        font-size:15px;
+    }
+    

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="row diva">
+        <div class="card mb-4 b col-md-4 ">
+
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">Mon Profil</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Nom: {{ app.user.firstname }}</li>
+                    <li>Prénom: {{ app.user.lastname }} </li>
+
+                    <li>email: {{ app.user.email }}</li>
+                    <li>Function: {{ app.user.function }}</li>
+
+
+                </ul>
+            </div>
+        </div>
+        {% if app.user.function == "student" %}
+
+
+            <div class="col-md-4 divers">
+                <div class="emploi"><a class="lien" href="">Mon Emploi du Temps</a></div>
+                <div class="emploi1"><a class="lien" href="{{ path('note') }}">Mes Notes</a></div>
+                <div class="emploi2"><a class="lien" href="{{ path('liste_file') }}">Mes Cours </a></div>
+
+            </div>
+        {% elseif app.user.function == "teacher" %}
+
+
+            <div class="col-md-5 divers">
+                <div class="emploi1"><a class="lien" href="{{ path('add_file') }}">Préparation du cours</a></div>
+                <div class="emploi2"><a class="lien" href="{{ path('notation') }}">Notation</a></div>
+            </div>
+        {% else %}
+            <div>non valide</div>
+        {% endif %}
+    </div>
+{% endblock %}

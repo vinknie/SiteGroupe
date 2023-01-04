@@ -1,0 +1,51 @@
+{% extends 'backoffice/base.html.twig'%}
+{% block body %}
+<div class="container mb-5">
+
+    <h1 class= "display-4 col-md-12">Planning</h1>
+
+    {% for message in app.flashes('success')%}
+
+        <div class="alert alert-success">
+            {{ message}}
+        </div>
+
+    {% endfor %}
+
+    <div class="text-right mb-3"><a class="btn btn-primary" href="{{ path('addPlanning')}}">Ajouter</a></div>
+    
+        <table class="table table-striped col-md-12 mx-auto">
+            <thead>
+                <tr>
+                <th scope="col">Matières</th>
+                <th scope="col">Début</th>
+                <th scope="col">Fin</th>
+                <th scope="col">Actions</th>
+                {# <th scope="col">Classe</th>
+                <th scope="col">Abscence</th> #}
+                </tr>
+            </thead>
+            {% for plans in planning %}
+            <tbody>
+                <tr>
+                    <td>{{ plans.subject.name}}</td>
+                    <td>{{ plans.startdate|date('d/m H:i')}}</td>
+                    <td>{{ plans.enddate|date('d/m H:i')}}</td>
+                    <td>
+                        <a class="btn btn-secondary" href="{{ path('editPlanning', {id: plans.id}) }}">Modifier</a>
+                        <form method="post" action="{{ path('deletePlanning', {id:plans.id}) }}" style="display: inline-block"
+                        onsubmit="return confirm('êtes vous sûr de vouloir supprimer ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ plans.id)}}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    
+                    </td>
+                
+                </tr>
+            </tbody>
+            {% endfor %}
+
+        </table>
+{% endblock %}
+

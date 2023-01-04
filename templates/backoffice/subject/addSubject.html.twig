@@ -1,0 +1,15 @@
+{% extends 'backoffice/base.html.twig'%}
+
+{% block body %}
+<div class="container mt-4">
+    <h1> Modifier matière</h1>
+
+    {{ form_start(form)}}
+
+        {{ form_rest(form)}}
+
+        <button class="btn btn-primary">Créer</button>
+
+    {{ form_end(form)}}
+
+{% endblock %}

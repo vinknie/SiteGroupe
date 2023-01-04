@@ -1,0 +1,32 @@
+easy_admin:
+  entities:
+    User:
+        class: App\Entity\User
+        form: 
+          fields: 
+            - {property: 'username'}
+            - {property: 'password'}  
+            - {property: 'classe'}                      
+            - {property: 'exams'}                      
+            - {property: 'email'}
+            - {property: 'firstName'}
+            - {property: 'lastName'}
+            - {property: 'birthdate'}
+            - {property: 'function'}     
+            - {property: 'Roles', type: 'collection'}
+
+        list:
+          fields:
+            - {property: 'username', label: 'nom utilisateur'}
+            - {property: 'password', label: 'mot de passe'}  
+            - {property: 'classe', label: 'class'}                      
+            - {property: 'exams', label: 'exam'}                      
+            - {property: 'email', label: 'email'}
+            - {property: 'firstName', label: 'prénom'}
+            - {property: 'lastName', label: 'nom'}
+            - {property: 'birthdate', label: 'date de naissance'}
+            - {property: 'function', label: 'fonction'}     
+            - {property: 'Roles', type: 'collection', label: 'roles'}
+          actions:
+            - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary'}
+            - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}

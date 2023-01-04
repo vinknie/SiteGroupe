@@ -1,0 +1,63 @@
+{% extends 'backoffice/base.html.twig' %}
+{% block page_title %} Gestion des classes {% endblock %}
+{% block fil_ariane %} 
+  {% if editMode %}
+<li class="breadcrumb-item active">Modification d'une classe</li>
+  {% else %}
+<li class="breadcrumb-item active">Ajout d'une classe</li>
+  {% endif %}
+
+{% endblock %}
+
+{% block body %}
+
+         <div class="col-md-6">
+       
+            <div class="card card-secondary">
+              <div class="card-header">
+                
+                    <h3 class="card-title">
+                        {% if editMode %}
+                            Modification d'une classe
+                        {% else %}
+                            Ajout d'une classe
+                        {% endif %}
+                    </h3>
+              </div>
+            
+            
+            <div class="card-body">
+                {{ form_start(form) }}
+                <div class="card-body">
+                    <div class="form-group">
+                        {{ form_row(form.nameclass, {'label': 'Nom de la classe', 'attr': {'placeholder': 'Saisir le Nom de la classe...'}}) }}
+                     </div>
+
+                      <div class="form-group">
+                        {{ form_row(form.level, {'label': 'Niveau', 'attr': {'placeholder': 'Saisir le niveau de la classe...'}}) }}
+                     </div>
+
+                      <div class="form-group">
+                        {{ form_row(form.number, {'label': 'Numéro', 'attr': {'placeholder': 'Saisir le numéro de la classe...'}}) }}
+                     </div>
+
+                </div>
+                
+            </div>
+            <div class="card-footer">
+                
+                   <button type="submit" class="btn btn-primary">
+                        {% if editMode %}
+                            Enregistrer les modifications
+                        {% else %}
+                            Ajouter
+                        {% endif %}
+                    </button>
+             </div>
+            </div>
+            {{ form_end(form) }}  
+         </div>     
+
+  
+
+{% endblock %}

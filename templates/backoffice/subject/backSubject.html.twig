@@ -1,0 +1,52 @@
+{% extends 'backoffice/base.html.twig'%}
+
+{% block body %}
+<div class="container mb-5">
+
+    <h1 class= "display-4 col-md-12">Matières</h1>
+
+    {% for message in app.flashes('success')%}
+
+        <div class="alert alert-success">
+            {{ message}}
+        </div>
+
+    {% endfor %}
+    <div class="text-right mb-3"><a class="btn btn-primary" href="{{ path('addSubject')}}">Ajouter</a></div>
+    
+    <table class="table table-striped col-md-12 mx-auto">
+
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Matière</th>
+            <th scope="col">Coefficient</th>
+            <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        {% for subjects in subject %}
+        <tbody>
+            <tr>
+                <th scope="row">{{ subjects.id}}</th>
+                <td>{{ subjects.name}}</td>
+                <td>{{ subjects.coefficient}}</td>
+                <td>
+                    <a class="btn btn-secondary" href="{{ path('editSubject', {id: subjects.id}) }}">Modifier</a>
+                    <form method="post" action="{{ path('deleteSubject', {id:subjects.id}) }}" style="display: inline-block"
+                    onsubmit="return confirm('êtes vous sûr de vouloir supprimer ?')">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ subjects.id)}}">
+                        <button class="btn btn-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+
+    </table>
+
+</div>
+    
+
+
+{% endblock %}

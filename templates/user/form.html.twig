@@ -1,0 +1,87 @@
+{% extends 'backoffice/base.html.twig' %}
+{% block page_title %} Gestion d'utilisteurs {% endblock %}
+{% block fil_ariane %} 
+  {% if editMode %}
+<li class="breadcrumb-item active">Modification d'un utilisateur</li>
+  {% else %}
+<li class="breadcrumb-item active">Ajout d'un utilisateur</li>
+  {% endif %}
+
+{% endblock %}
+
+{% block body %}
+
+         <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="card card-secondary">
+              <div class="card-header">
+                {# <h3 class="card-title">Ajout d'un utilisateur</h3> #}
+                    <h3 class="card-title">
+                        {% if editMode %}
+                            Modification d'un utilisateur
+                        {% else %}
+                            Ajout d'un utilisateur
+                        {% endif %}
+                    </h3>
+              </div>
+            
+            
+            <div class="card-body">
+                {{ form_start(form) }}
+                <div class="card-body">
+                    <div class="form-group">
+                        {{ form_row(form.username, {'label': 'NomUtilisateur', 'attr': {'placeholder': 'Saisir le NomUtilisateur...'}}) }}
+                     </div>
+
+                      <div class="form-group">
+                        {{ form_row(form.password, {'label': 'Mot de passe', 'attr': {'placeholder': 'Saisir le mot de passe...'}}) }}
+                     </div>
+
+                      <div class="form-group">
+                        {{ form_row(form.confirm_password, {'label': 'confirmer le mot de passe', 'attr': {'placeholder': 'Confirmer le mot de passe...'}}) }}
+                     </div>                     
+
+                      <div class="form-group">
+                        {{ form_row(form.email, {'label': 'Email', 'attr': {'placeholder': 'Saisir l\'\email...'}}) }}
+                     </div>
+
+                    <div class="form-group">
+                        {{ form_row(form.firstname, {'label': 'Prénom', 'attr': {'placeholder': 'Saisir le prénom...'}}) }}
+                     </div>
+
+                      <div class="form-group">
+                        {{ form_row(form.lastname, {'label': 'Nom', 'attr': {'placeholder': 'Saisir le nom...'}}) }}
+                     </div>                    
+
+                      <div class="form-group">
+                        {{ form_row(form.birthdate, {'label': 'Date de naissance', 'attr': {'placeholder': 'Saisir la date de naissance...'}}) }}
+                     </div>
+
+                      <div class="form-group">
+                        {{ form_row(form.function, {'label': 'Fonction', 'attr': {'placeholder': 'Saisir la fonction...'}}) }}
+                     </div>
+
+                      <div class="form-group">
+                        {{ form_row(form.classe, {'label': 'Classe', 'attr': {'placeholder': 'Saisir la classe..'}}) }}
+                     </div>
+
+                </div>
+                
+            </div>
+            <div class="card-footer">
+                
+                   <button type="submit" class="btn btn-primary">
+                        {% if editMode %}
+                            Enregistrer les modifications
+                        {% else %}
+                            Ajouter
+                        {% endif %}
+                    </button>
+             </div>
+            </div>
+            {{ form_end(form) }}  
+         </div>     
+
+  
+
+{% endblock %}

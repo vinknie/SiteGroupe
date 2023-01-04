@@ -1,0 +1,17 @@
+easy_admin:
+  entities:
+    Classe:
+      class: App\Entity\Classe
+      form: 
+        fields: 
+          - {property: 'nameClass'}
+          - {property: 'level'}
+          - {property: 'number'}
+
+
+
+      list:
+        fields:
+          - {property: 'nameClass', label: 'Nom de la classe'}
+          - {property: 'level', label: 'Niveau'}
+          - {property: 'number', label: 'Numéro de la class'}

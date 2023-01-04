@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container">
+    <h1 class="titlehobbie">Voyages linguistique</h1>
+    <p class="text-center font-italic">Les séjours linguistiques offrent la possibilité de progresser en langue étrangère, de découvrir une nouvelle culture et de nouveaux horizons. Ce type de programme va au-delà de l’apprentissage linguistique. C’est également une expérience qui amène les jeunes à la rencontre de nouvelles personnes, à l’ouverture, à l’adaptation à de nouvelles règles de vie.</p>
+    <div class="row">   
+        <div class="col-12 mb-4 text-center">
+        <h1 class="titlehobbie">Barcelone</h1>
+        <img src="https://www.hghoteles.com/assets/img/gallery/sagrada-familia-barcelona-1.jpg" class="d-block w-100" alt="">
+        <p>Barcelone, capitale de la Catalogne, est une ville méditerranéenne et cosmopolite possédant des vestiges romains, des quartiers médiévaux et les plus beaux monuments du Modernisme, ainsi que des éléments avant-gardistes du XXe siècle. </p>
+            <a href="{{ path('user_login') }}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">voir plus</a>
+        </div>
+        <div class="col-12 mb-4 text-center">
+        <h1 class="titlehobbie">Berlin</h1>
+        <img src="https://images7.alphacoders.com/430/thumb-1920-430791.jpg" class="d-block w-100" alt="">
+        <p>Berlin, la capitale allemande, séduit par l'extraordinaire diversité de ce que l'on peut y voir, par sa richesse culturelle et par un style de vie à la fois dynamique et décontracté.</p>
+            <a href="{{ path('user_login') }}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">voir plus</a>
+        </div>
+        <div class="col-12 mb-4 text-center">
+        <h1 class="titlehobbie">Londres</h1>
+        <img src="https://www.1zoom.me/big2/78/224621-Sepik.jpg" class="d-block w-100" alt="">
+        <p>Londres est connue pour être l’une des plus belle ville du monde, mais aussi l’une des plus diversifiée en terme de culture avec 50 nationalités parlant plus de 300 langues différentes. La ville légendaire est aussi renommée pour la richesse de son histoire et de sa culture. </p>
+            <a href="{{ path('user_login') }}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">voir plus</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

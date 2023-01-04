@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1 class="col-md-6 mx-auto">liste des fichiers à télécharger</h1>
+    <br><br>
+    <div class="conntainer">
+        <table class="table table-bordered col-md-8 mx-auto">
+            <thead>
+            <tr>
+                <th>N°</th>
+                <th>Matière</th>
+                <th>Description</th>
+                <th>Fichier</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for lister in liste %}
+                <tr>
+                    <td>{{ lister.id }}</td>
+                    <td>{{ lister.subject.name }}</td>
+                    <td>{{ lister.description }}</td>
+
+                    <td><a href="/files/lessons/{{ lister.files }}">Télécharger</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br><br>
+    </div>
+{% endblock %}

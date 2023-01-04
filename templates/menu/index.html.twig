@@ -1,0 +1,57 @@
+{% extends 'backoffice/base.html.twig'%}
+
+{% block body %}
+<div class="container mb-5">
+
+    <h1 class= "display-4 col-md-12">Menu Cantine</h1>
+
+    {% for message in app.flashes('success')%}
+
+        <div class="alert alert-success">
+            {{ message}}
+        </div>
+
+    {% endfor %}
+
+    {% set days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi'] %}
+    {% set count = 0 %}
+   
+    <table class="table table-striped col-md-12 mx-auto">
+      {% for menus in menu %}
+      
+        <thead>
+            <tr>
+                <th class="text-primary display-4" scope="col">{{ days[count]}}</th>
+
+            </tr>
+        </thead>
+      {% set count = count + 1 %}
+      
+        <tbody>
+            <tr>
+                <th scope="row">Entrée</th>
+                    <td>{{ menus.entree}}</td>
+            </tr>
+            <tr>
+                <th scope="row">PLat</th>
+                    <td>{{ menus.mainCourse}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Dessert</th>
+                    <td>{{ menus.dessert}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="btn btn-secondary" href="{{ path('editMenu', {id: menus.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+
+    </table>
+
+</div>
+    
+
+
+{% endblock %}

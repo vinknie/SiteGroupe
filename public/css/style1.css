@@ -1,0 +1,61 @@
+.calendar {
+    width: 100%;
+}
+
+.calendar td {
+    padding: 10px;
+    border: 1px solid #CCC;
+    vertical-align: top;
+    width: 14, 29%;
+}
+
+div .emploi {
+    height: 10vh;
+    background-color: rgba(128, 128, 128, 0.20);
+    border-radius: 5px 5px 5px 5px;
+}
+
+div .emploi1 {
+    height: 10vh;
+    background-color: rgba(128, 128, 128, 0.20);
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 15px;
+
+
+}
+
+div .emploi2 {
+    height: 10vh;
+    background-color: rgba(128, 128, 128, 0.20);
+    border-radius: 5px 5px 5px 5px;
+    margin-top: 15px;
+    align-self: center;
+
+
+}
+
+.divers {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.lien {
+    color: rgb(87, 87, 87);
+    font-size: 30px;
+}
+
+divers emploi .lien:hover {
+    text-decoration: none;
+    background: white;
+    font-size: 16px;
+}
+
+.diva {
+    margin: 20px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.use {
+    height: 20vh;
+}

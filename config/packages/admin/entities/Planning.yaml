@@ -1,0 +1,21 @@
+easy_admin:
+  entities:
+    Planning:
+      class: App\Entity\Planning
+      form: 
+        fields: 
+          # - {property: 'title', type: 'easyadmin_autocomplete', type_options: { class: 'App\Entity\Subject' }}
+          - {property: 'title', label: 'title'}
+          # - {property: 'enddate', label: 'Fin'}
+          - {property: 'startdate', label: 'Debut', type_options: { class: 'App\Entity\PlanningSubject' }}
+          - {property: 'enddate', label: 'Fin', type_options: { class: 'App\Entity\PlanningSubject' }}
+
+
+      list:
+        fields:
+          # - {property: 'name', type_options: { class: 'App\Entity\Subject' }}
+          # - {property: 'startdate', label: 'Début'}
+          # - {property: 'enddate', label: 'Fin'}
+          - {property: 'title', label: 'title'}
+          - {property: 'startdate', label: 'Debut', type_options: { class: 'App\Entity\PlanningSubject' }}
+          - {property: 'enddate', label: 'Fin', type_options: { class: 'App\Entity\PlanningSubject' }}

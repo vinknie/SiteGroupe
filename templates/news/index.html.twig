@@ -1,0 +1,47 @@
+{% extends 'backoffice/base.html.twig'%}
+
+{% block body %}
+<div class="container mb-5">
+
+    <h1 class= "display-4 col-md-12">Actualitées</h1>
+
+    {% for message in app.flashes('success')%}
+
+        <div class="alert alert-success">
+            {{ message}}
+        </div>
+
+    {% endfor %}
+    
+    <table class="table table-striped col-md-12 mx-auto">
+    
+        <thead>
+            <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col">Images</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        {% for new in news %}
+        <tbody>
+            <tr>
+                <th scope="row">{{ new.title}}</th>
+                <td>{{ new.description}}</td>
+                <td><img src="{{ new.image}}" alt=""></td>
+                <td>{{ new.date|date('d/m H:i')}}</td>
+                <td>
+                    <a class="btn btn-secondary" href="{{ path('editNews', {id: new.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+
+    </table>
+
+</div>
+    
+
+
+{% endblock %}

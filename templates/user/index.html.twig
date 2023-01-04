@@ -1,0 +1,81 @@
+{% extends 'backoffice/base.html.twig' %}
+{% block page_title %} Gestion d'utilisteurs {% endblock %}
+{% block fil_ariane %} 
+<li class="breadcrumb-item active">Liste utilisateurs</li>
+{% endblock %}
+{% block body %}
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('primary') %}
+            <div class="alert alert-primary">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('danger') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
+     
+    <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">List des utilisateurs</h3>
+                <div class="card-tools"><a href="{{ path('user_add') }}" class="btn btn-block btn-outline-success btn-sm">Ajouter utilisateur</a></div>                  
+                
+                
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>                  
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>NomUtilisateur</th>
+                      {# <th>Mot de passe</th> #}
+                      <th>Email</th>
+                      <th>Prènom</th>
+                      <th>Nom</th>
+                      <th>Date de naissance</th>
+                      <th>Fonction</th>
+                      <th>Classe</th>
+                      <th colspan="2">Action</th>
+                      
+
+                    </tr>
+                  </thead>
+                   <tbody>
+                        {% for user in users %}
+                        
+                          <tr>
+                            <th scope="row">{{ user.id }}</th>
+                            <td>{{ user.username }}</td>
+                            {# <td>{{ user.password }}</td> #}
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.firstname }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td>{{ user.birthdate |date('Y-m-d') }}</td>
+                            <td>{{ user.function }}</td>
+                            <td>{{ user.classe }}</td>
+                            <td><a href="{{ path('user_edit', {'id' : user.id }) }}"
+                              class='text-primary'> <i class="fas fa-edit"></i></a></td>                            
+                            <td><a href="{{ path('user_remove', {'id' : user.id }) }}"  class='text-primary'>
+                            <i class="fas fa-trash-alt" style='color:red'
+                             onclick="return confirm('Voulez-vous vraiment supprimer cet utilisateur ?') || event.preventDefault()"></i></a></td>
+                          </tr>
+                          
+                          {% endfor %}
+                        </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+       
+                       
+              
+{% endblock %}

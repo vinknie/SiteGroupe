@@ -1,0 +1,27 @@
+.titlerule{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 60px;
+    color:rgb(87, 87, 87);
+    text-transform: none;
+    font-style: italic;
+}
+.download{
+    text-align: center;
+    color:rgb(87, 87, 87);
+    margin-bottom:0;
+    padding-bottom: 15px;
+    font-style: italic;
+    
+}
+.download a{
+    text-decoration: none;
+    color:rgb(87, 87, 87);
+    font-weight: bold;
+    text-decoration: underline red;
+    
+}
+.textrule{
+    text-align: center;
+    font-size: 15px;
+}

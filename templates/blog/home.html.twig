@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h3 class="titleconfi">Réouverture progressive post-confinement</h3>
+<div class="video">
+    <iframe class="videoresponsive" width="700" height="450" src="https://www.youtube.com/embed/szymTEXVumU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+    <hr><h3 class="titlenew">Les Nouvelles de la Semaine</h3>
+    <div id="contentArticle">
+
+            <div class="scene scene--card">
+                <div class="card">
+                    <div class="card__face card__face--front">
+                        <h2>{{ article1.title }}</h2><hr>
+                        <img class="imgback" src="{{ article1.image }}" alt="{{ article1.image }}"><hr>
+                        <p class="rotate"> Cliquez sur la carte  pour voir la description</p>
+
+                    </div>
+
+                    <div class="card__face card__face--back">
+                        <p>{{ article1.description }}</p><hr>
+                        <p>Date : {{ article1.date|date('d/m/Y H:i:s') }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="scene scene--card">
+                <div class="card1">
+                    <div class="card__face card__face--front">
+                        <h2>{{ article2.title }}</h2><hr>
+                        <img class="imgback" src="{{ article2.image }}" alt="{{ article2.image }}"><hr>
+                        <p class="rotate"> Cliquez sur la carte  pour voir la description</p>
+
+                    </div>
+
+                    <div class="card__face card__face--back">
+                        <p> {{ article2.description }}</p><hr>
+                        <p class="date">Date : {{ article1.date|date('d/m/Y H:i:s') }}</</p>
+                    </div>
+                </div>
+            </div>
+            <div class="scene scene--card">
+                <div class="card2">
+                    <div class="card__face card__face--front">
+                        <h2>{{ article3.title }}</h2><hr>
+                        <img class="imgback" src="{{ article3.image }}" alt="{{ article3.image }}"><hr>
+                        <p class="rotate"> Cliquez sur la carte  pour voir la description</p>
+
+                    </div>
+
+                    <div class="card__face card__face--back">
+                        <p> {{ article3.description }}</p><hr>
+                        <p>Date : {{ article3.date|date('d/m/Y H:i:s') }}</p>
+                    </div>
+                </div>
+            </div>
+
+    </div>  
+
+
+{% endblock %}

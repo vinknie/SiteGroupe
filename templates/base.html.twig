@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}SchoolManagement{% endblock %}</title>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+              crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/hobbie.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/reglement.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/presentation.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/ecole.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/cantine.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+
+
+   
+
+
+
+
+        <link rel="stylesheet" href="{{ asset('css/mobile.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/tablet.css') }}">
+
+
+    {% endblock %}
+</head>
+<body>
+<header id="comebacktop">
+    <nav>
+        <div class="menu-icon">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+        <div class="nameSite">
+            SCHOOLMANAGEMENT
+        </div>
+        <ul id="scrolling-menu">
+            <li><a href="{{ path('home') }}">Acceuil</a></li>
+            <li><a href="{{ path("ecole") }}">L'école</a>
+                <ul class="sous">
+                    <li><a href="{{ path('presentation') }}">Présentation</a></li>
+                    <li><a href="{{ path('reglement') }}">Réglement Intérieur</a></li>
+                    <li><a href="{{ path('cantine') }}">Cantine</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ path('hobbie') }}">Activité Scolaire</a>
+                <ul class="sous">
+                    <li><a href="{{ path('club') }}">Clubs</a>
+                    </li>
+                    <li><a href="{{ path('voyage') }}">Voyage</a></li>
+                    <li><a href="{{ path('media') }}">Médiatheque</a></li>
+                </ul>
+            </li>
+            <li><a href="#contactfooter">Contact</a></li>
+            {% if app.user %}
+                <li><a href="{{ path("profil", {"id" : app.session}) }}">Mon Espace Personnel</a>
+
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+            <li><a href="{{ path('admin') }}">BackOffice</a>
+                {% endif %}
+            </li>
+            {% if not app.user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('user_login') }}">Connexion</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('user_logout') }}">Déconnexion</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<div class="content">
+    {% block body %}
+
+
+    {% endblock %}
+</div>
+
+
+<footer id="contactfooter" class="footer-global">
+    <div class="comeback"><p><a class="linkcomeback" href="#comebacktop">Revenir en haut de la page</a></p></div>
+    <div class="footer-left">
+        <iframe style="border: 0;" src="{{ asset('img/googlemap.png') }}" width="300" height="300"
+                frameborder="0"></iframe>
+        <p class="footer-copyright"> © 2020 - SchoolManagement </p>
+    </div>
+
+    <div class="footer-center">
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>45 Avenue de l'Ecole</span> Paris, 75000</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>00.00.00.00.00</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a class="emaillien" href="mailto:notreEmail@gmail.fr">notreEmail@gmail.fr</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p>Contactez Nous Directement</p>
+
+
+        <form action="{{ path('contact') }}" method="post">
+
+            <input type="text" name="email" placeholder="Votre Email">
+            <textarea name="message" placeholder="Votre Message"></textarea>
+            <input class="button" type="submit" placeholder="Envoyer"></input>
+
+        </form>
+        <p class="redirection"> *Vous serez redirigé vers la page Ecole a l'envoye du mail</p>
+
+
+</footer>
+
+
+{% block javascripts %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+{% endblock %}
+</body>
+</html>

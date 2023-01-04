@@ -1,0 +1,18 @@
+{% extends 'backoffice/base.html.twig'%}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1> Modifier Planning</h1>
+
+        {{ form_start(form)}}
+
+            
+            {{ form_row(form.subject)}}
+            {{ form_row(form.startdate)}}
+            {{ form_row(form.enddate)}}
+            
+
+            <button type="submit" class="btn btn-primary">Modifier</button>
+
+        {{ form_end(form)}}
+{% endblock %}
